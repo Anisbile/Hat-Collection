@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require("method-override");
+const Hat = require('./models/hats');
 // Initialize Express App
 const app = express();
 
@@ -21,6 +22,22 @@ db.on('error', (error) => console.log('MongoDB Error ' + error.message));
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride("_method"));
 
+// Seed
+app.get("/hats/seed", (req, res) => {
+    Hat.deleteMany({}, (error, AllHat) => {})
+  
+    Hat.create(hatSeed, (error, AllHat) => {
+      res.redirect("/hats")
+    })
+  })
+// Index
+app.get("/hats", (req, res) => {
+  Hat.find({}, (error, AllHat) => {
+    res.render("index.ejs", {
+      hat: AllHat,
+    })
+  })
+})
 
 // Tell the App to listen for requests
 const PORT = process.env.PORT;
