@@ -14,13 +14,8 @@ const hatsSchema = new Schema({
         require: true
     },
     price: {
-        type: Number,
-        require: true
-    },
-    comment: {
         type: String,
         require: true
     },
 })
-const Hat = mongoose.model("Hat", hatsSchema)
-module.exports = Hat
+module.exports = mongoose.model("Hat", hatsSchema)

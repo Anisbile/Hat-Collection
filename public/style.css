@@ -1,0 +1,40 @@
+body{
+    background-color: lightgrey;
+    font-family: Impact, Charcoal, sans-serif ;
+}
+
+.button{
+    background-color: black;
+    color: whitesmoke;
+
+}
+
+.button:hover{
+    background: red;
+    color: whitesmoke;
+}
+
+.top{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.container{
+    border: 1px ; 
+    padding: 10px;
+    align-items: center;
+}
+
+.container ul{
+    padding: 0;
+    list-style: none;
+}
+
+.container .img li{
+    text-align: center;
+    padding:10px;
+    border: 10px;
+    width: 100%;
+}
