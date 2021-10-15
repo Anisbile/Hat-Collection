@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Edit Comment</title>
 </head>
 <body>
-    <h1>Edit Hat</h1>
-    <form action="/hats/<%= hat._id %>?_method=PUT" method="POST">
-        <!-- Image: <input type="text" name="imageURL"> -->
-        Name: <input type="text" name="name" value="<%= hat.name %>" required><br>
-        Description: <input type="text" name="description" value="<%= hat.description %>" required><br>
-        Image: <input type="text" name="img" value="<%= hat.img%>" required><br>
-        Price: <input type="text" name="price" value="<%= hat.price %>" required><br>
-        <input type="submit" value="Edit Hat">
-    </form>
+    <div class="new">
+        <h1>Edit Hat</h1>
+        <form action="/hats/<%= hat._id %>?_method=PUT" method="POST">
+            <!-- Image: <input type="text" name="imageURL"> -->
+            Name: <input type="text" name="name" value="<%= hat.name %>" required><br>
+            Description: <input type="text" name="description" value="<%= hat.description %>" required><br>
+            Image: <input type="text" name="img" value="<%= hat.img%>" required><br>
+            Price: <input type="text" name="price" value="<%= hat.price %>" required><br>
+            <input type="submit" value="Edit Hat">
+        </form>
+    </div>
 </body>
 </html>

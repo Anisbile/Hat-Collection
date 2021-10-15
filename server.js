@@ -39,28 +39,28 @@ app.get("/hats/seed", (req, res) => {
   
     Hat.create(hatSeed, (error, AllHat) => {
       res.redirect("/hats")
-    })
-  })
+    });
+  });
 // Index
 app.get("/hats", (req, res) => {
   Hat.find({}, (error, AllHat) => {
     res.render("index.ejs", {
       hat: AllHat,
-    })
-  })
-})
+    });
+  });
+});
 
 // New 
 app.get("/hats/new", (req, res) => {
   res.render("new.ejs")
-})
+});
 
 // Delete
 app.delete("/hats/:id", (req, res) => {
   Hat.findByIdAndDelete(req.params.id, (err, deleteHat) => {
     res.redirect("/hats")
-  })
-})
+  });
+});
 
 // Update
 app.put("/hats/:id", (req, res) => {
@@ -70,31 +70,32 @@ app.put("/hats/:id", (req, res) => {
       res.redirect(`/hats/${req.params.id}`)
     }
   )
-})
+});
 // Create Route
 app.post('/hats', (req, res) => {
   Hat.create(req.body, (error, createHat) => {
     res.redirect("/hats")
-  })
+  });
 });
 // Edit
 app.get("/hats/:id/edit", (req, res) => {
     Hat.findById(req.params.id, (error, foundHat) => {
       res.render("edit.ejs", {
-        hat: foundHat,
+        hat: foundHat
       })
-    })
-})
+    });
+});
 
-// Show
-app.get("/hats/:id", (req, res) => {
+// // Show
+app.get('/hats/:id', (req, res) => {
     Hat.findById(req.params.id, (err, foundHat) => {
       res.render("show.ejs", {
-        hat: foundHat,
-      })
-    })
-})
-app.get('/home', (req, res) => {
+        hat: foundHat
+      });
+    });
+});
+
+app.get('/', (req, res) => {
   res.render('home.ejs', { user: req.session.user });
 });
 
@@ -138,7 +139,7 @@ app.post('/signup', (req, res) => {
 
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {
-      res.redirect('/home');
+      res.redirect('/');
   });
 });
 app.get('/dashboard', isAuthenticated, (req, res) => {

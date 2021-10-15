@@ -18,4 +18,5 @@ const hatsSchema = new Schema({
         require: true
     },
 })
-module.exports = mongoose.model("Hat", hatsSchema)
+const Hat = mongoose.model("Hat", hatsSchema)
+module.exports = Hat

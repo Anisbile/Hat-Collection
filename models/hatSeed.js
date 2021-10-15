@@ -48,6 +48,6 @@ module.exports = [
           "I got this hat while I was in Hawaii this summer. A souvenier turned into an everyday hat!",
         img: "https://di2ponv0v5otw.cloudfront.net/posts/2021/07/20/60f793f66f6c914a766a2e0b/m_60f794482a1effe01906de3d.jpg",
         price: "10 USD",
-      },
+      }
 
 ]

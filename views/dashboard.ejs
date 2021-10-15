@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hello <%= user.username %></title>
+
 </head>
 <body>
-    <header>
+    <header class="dashboard">
         <h1>Hello <%= user.username %></h1>
-        <nav>
-            <a href="/logout">Logout</a>  
+        <nav class="dash">
+            <a href="/logout">Logout</a>
             <a href="/hats">Hats</a>          
         </nav>
     </header>
